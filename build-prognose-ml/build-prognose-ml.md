@@ -25,4 +25,4 @@ Die Jobs sind unabhängig nutzbar, können aber zusammen einen Ablauf bilden –
 
 # Architektur & Komponenten
 
-![Flowchart](./jenkins-ml.cml.drawio.png)
+![Flowchart](https://github.com/cqNikolaus/jenkins-ki-dokumentation/blob/main/build-prognose-ml/jenkins-ml-diagramm.png)
