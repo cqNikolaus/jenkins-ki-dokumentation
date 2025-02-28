@@ -1,6 +1,6 @@
 # Build-Prognose in Jenkins mit Machine-Learning-Modellen
 
-Dieses Projekt nutzt drei separate Jenkins-Jobs, um Daten aus Builds zu extrahieren (1), damit ein ML-Modell zu trainieren (2) und mit dem trainierten Modell die Erfolgswahrscheinlichkeit des nächsten Builds eines beliebigen Jobs vorherzusagen. 
+Dieses Projekt nutzt drei separate Jenkins-Jobs, um Daten aus Builds zu extrahieren, ein ML-Modell zu trainieren und mit einem trainierten Modell die Erfolgswahrscheinlichkeit des nächsten Builds eines beliebigen Jobs vorherzusagen. 
 
 ## Inhaltsverzeichnis
 - [Projektübersicht](#projektübersicht)
@@ -13,3 +13,14 @@ Dieses Projekt nutzt drei separate Jenkins-Jobs, um Daten aus Builds zu extrahie
 
 
 # Projektübersicht
+
+Das Projekt zeigt, wie Machine Learning in Jenkins eingesetzt werden kann, um die Erfolgswahrscheinlichkeit des nächsten Durchlaufs eines Jenkins-Jobs vorherzusagen. Ziel ist es, Entwicklern zu helfen, Probleme frühzeitig zu erkennen und Build-Prozesse zu verbessern. Dafür gibt es drei separate Jenkins-Jobs: 
+
+- Der erste Job sammelt historische Build-Daten (z. B. Dauer, Erfolg etc.) eines Jobs und speichert sie in einer CSV-Datei.
+- Der zweite Job trainiert ein Machine-Learning-Modell mit den Daten aus einer CSV-Datei und gibt das fertige Modell als .pkl-Datei aus.
+- Der dritte Job nutzt ein trainiertes Modell und eine passende CSV-Datei, um die Erfolgswahrscheinlichkeit des nächsten Builds eines beliebigen Jobs vorherzusagen.
+
+Die Jobs sind unabhängig nutzbar, können aber zusammen einen Ablauf bilden – etwa indem man Daten extrahiert, ein Modell trainiert und dann eine Vorhersage trifft. So wird klar, wie Machine Learning Jenkins smarter machen kann.
+
+
+# Architektur & Komponenten
