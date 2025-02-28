@@ -1,6 +1,6 @@
 # Jenkins & KI/ML – Dokumentation
 
-Diese Dokumentation beschreibt drei Projekte, in denen wir Jenkins mit KI/ML-Technologien kombiniert haben. Jedes Projekt hat eine eigene `.md` -Datei mit Details zur Funktionsweise, Einrichtung und Nutzung. 
+Diese Dokumentation beschreibt drei Projekte, in denen wir Jenkins mit KI/ML-Technologien kombiniert haben. Jedes Projekt hat eine eigenes Verzeichnis mit `.md` -Dateien zur Funktionsweise, Einrichtung und Nutzung. 
 
 Ziel dieser Projekte ist es, praktische Ansätze zu demonstrieren, wie Künstliche Intelligenz und Machine Learning in Jenkins-basierte DevOps-Workflows integriert werden können, um typische Aufgaben wie Build-Management und Fehleranalyse zu verbessern.
 
