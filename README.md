@@ -8,8 +8,8 @@ Ziel dieser Projekte ist es, praktische Ansätze zu demonstrieren, wie Künstlic
 
 ## Projekte: 
 
-### [1. Build-Prognose in Jenkins mit Machine-Learning-Modellen](./blob/main/build-prognose-ml.md)
+### [1. Build-Prognose in Jenkins mit Machine-Learning-Modellen](./build-prognose-ml.md)
 
-### [2. Einfache Fehleranalyse in Jenkins mit der OpenAI-API](./blob/main/fehleranalyse-openai.md) 
+### [2. Einfache Fehleranalyse in Jenkins mit der OpenAI-API](./fehleranalyse-openai.md) 
 
-### [3. Erweiterte, isolierte Fehleranalyse in Jenkins mit lokalem LLM und RAG](./blob/main/erweiterte-fehleranalyse-llm-rag.md)   
+### [3. Erweiterte, isolierte Fehleranalyse in Jenkins mit lokalem LLM und RAG](./erweiterte-fehleranalyse-llm-rag.md)   
