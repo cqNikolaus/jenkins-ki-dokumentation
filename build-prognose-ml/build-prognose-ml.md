@@ -25,3 +25,4 @@ Die Jobs sind unabhängig nutzbar, können aber zusammen einen Ablauf bilden –
 
 # Architektur & Komponenten
 
+![Flowchart](./jenkins-ml.cml.drawio.png)
