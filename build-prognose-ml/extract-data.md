@@ -1,4 +1,7 @@
-# Bestandteile
+# data_extraction.py
+Das Skript verbindet sich mit einer Jenkins-Instanz, ruft die Build-Daten und Konsolen-Logs eines Jobs ab, extrahiert relevante Features (z. B. Dauer, Commits, Fehler), berechnet zusätzliche Metriken und speichert die bereinigten Daten als CSV für Machine Learning oder weitere Analysen.
+
+
 ## Dockerfile
 ➡ [Link zum Dockerfile](https://github.com/cqNikolaus/JenkinsML/blob/main/data_extraction/Dockerfile)  
 ### Ablauf
