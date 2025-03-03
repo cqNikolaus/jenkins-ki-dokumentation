@@ -26,3 +26,18 @@ Die Jobs sind unabhängig nutzbar, können aber zusammen einen Ablauf bilden –
 # Architektur & Komponenten
 
 ![Flowchart](https://github.com/cqNikolaus/jenkins-ki-dokumentation/blob/main/build-prognose-ml/jenkins-ml-diagramm.png)
+
+- Die Jenkins-Instanz, wird in einem Docker Container betrieben. Dieser Container wird auf einer virtuellen Maschine (VM) in der Hetzner Cloud gehostet.
+- Die Instanz beinhaltet noch ein paar alte Jobs zum Erstellen von Schulungsinstanzen, sowie die 3 Jobs dieses Projekts.
+  - Das Setup sollte deshalb noch einmal sauber auf einer neuen VM aufgesetzt werden.
+- Alle Jobs laufen jeweils in einem separaten Docker Container auf dem Controller (built-in Node), also innerhalb des Jenkins-Containers.
+- Aktuelle URL der Instanz: https://jenkins-clemens01-0.comquent.academy
+
+
+### Code-Repository & Struktur
+
+Der gesamte Code des Projekts ist in einem GitHub-Repository unter github.com/cqnikolaus/jenkinsML organisiert. Innerhalb dieses Repos gibt es für jeden der drei Jobs – Datenextraktion, Modelltraining und Vorhersage – einen eigenen Ordner. Jeder dieser Ordner enthält:
+
+- Ein Jenkinsfile, das den Ablauf des jeweiligen Jobs beschreibt.
+- Ein Dockerfile, das den Container für den jeweiligen Job definiert.
+- Ein Python-Skript, das die eigentliche Logik für den jeweiligen Schritt implementiert.
