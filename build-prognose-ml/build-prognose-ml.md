@@ -25,7 +25,7 @@ Die Jobs sind unabhängig nutzbar, können aber zusammen einen Ablauf bilden –
 
 # Architektur & Komponenten
 
-![Flowchart](https://github.com/cqNikolaus/jenkins-ki-dokumentation/blob/main/build-prognose-ml/jenkins-ml-diagramm.png)
+![Flowchart](https://github.com/cqNikolaus/jenkins-ki-dokumentation/blob/main/build-prognose-ml/jenkinsml-diagramm.png)
 
 - Die Jenkins-Instanz, wird in einem Docker Container betrieben. Dieser Container wird auf einer virtuellen Maschine (VM) in der Hetzner Cloud gehostet.
 - Die Instanz beinhaltet noch ein paar alte Jobs zum Erstellen von Schulungsinstanzen, sowie die 3 Jobs dieses Projekts.
