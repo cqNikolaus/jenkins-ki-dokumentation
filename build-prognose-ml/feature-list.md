@@ -1,6 +1,6 @@
 
 ### 1. Extrahierte Rohdaten aus der Jenkins API
-*Extrahiert mit dem Skript [data_extraction.py](build-prognose-ml/extract-data.md)*
+*Extrahiert mit dem Skript [data_extraction.py](https://github.com/cqNikolaus/jenkins-ki-dokumentation/blob/main/build-prognose-ml/extract-data.md)*
 
 - **build\_number**  
 *Beschreibung:* Die fortlaufende ID des Builds (z. B. 1, 2, 3 …).  
