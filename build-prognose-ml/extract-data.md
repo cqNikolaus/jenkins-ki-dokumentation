@@ -9,7 +9,7 @@ Es wird ein Standard-Python-Image verwendet. Anschließend werden die Python-Abh
 ### Ablauf
 **1. Der Job nimmt zwei Pflichtparameter entgegen:**
 - **TARGET_JOB_NAME**: Name des Jobs, dessen Build-Daten extrahiert werden sollen.
-- **FIELDS_TO_INCLUDE**: Die Daten (Features), die extrahiert werden sollen. Der Default-Wert listet bereits alle verfügbaren Features auf. Nicht benötigte können einfach entfernt werden. Das Feld `result_bin` ist dabei nicht gelistet, es wird automatisch immer extrahiert. Dabei handelt es sich um das "Label", das als primärer Schlüssel für das Modelltraining dient. (1 = Build war erfolgreich, 0 = Build ist fehlgeschlagen). Alle anderen Features sind optional. Sollen die exportierten Daten anschließend zum Modelltraining mit dem zugehörigen Job verwendet werden, müssen mindestens die Felder `duration_sec`, `error_count` und `commits_count`
+- **FIELDS_TO_INCLUDE**: Die Daten (Features), die extrahiert werden sollen. Der Default-Wert listet bereits alle verfügbaren Features auf. Nicht benötigte können einfach entfernt werden. Das Feld `result_bin` ist dabei nicht gelistet, es wird automatisch immer extrahiert. Dabei handelt es sich um das "Label", das als primärer Schlüssel für das Modelltraining dient. (0 = Build war erfolgreich, 1 = Build ist fehlgeschlagen). Alle anderen Features sind optional. Sollen die exportierten Daten anschließend zum Modelltraining mit dem zugehörigen Job verwendet werden, müssen mindestens die Felder `duration_sec`, `error_count` und `commits_count` enthalten sein, da sie für das Training grundlegende Informationen über den Build liefern und das Trainingsskript sie erwartet.
 - [Liste aller Extrahierbaren Features](feature-list.md)
 
 **2. Das Docker-Image wird gebaut**
@@ -50,10 +50,10 @@ Es wird ein Standard-Python-Image verwendet. Anschließend werden die Python-Abh
 
 6. **Verarbeitung der Daten als DataFrame**  
    - Die Build-Daten werden in eine Tabelle (`pandas.DataFrame`) umgewandelt.  
-   - Daten werden bereinigt, builds mit unbekanntem Ergebnis werden herausgefiltert.  
+   - Die Daten werden bereinigt: Builds mit unbekanntem Ergebnis werden entfernt.  
    - Spalten, die im Parameter `FIELDS_TO_INCLUDE` entfernt wurden, werden hier aussortiert.   
    - Das Label `result_bin` (`0` oder `1`) für das Build-Ergebnis (`FAILURE` oder `SUCCESS`) wird hinzugefügt.
 
-8. **Ausgabe der Daten als CSV**  
+7. **Ausgabe der Daten als CSV**  
    - Die gefilterten Daten werden als CSV ausgegeben (standardmäßig in die Konsole).    
 
