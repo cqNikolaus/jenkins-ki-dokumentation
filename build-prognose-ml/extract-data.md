@@ -1,4 +1,4 @@
-# data_extraction.py
+# Datenextraktion
 Das Skript verbindet sich mit einer Jenkins-Instanz, ruft die Build-Daten und Konsolen-Logs eines Jobs ab, extrahiert relevante Features (z. B. Dauer, Commits, Fehler), berechnet zusätzliche Metriken und speichert die bereinigten Daten als CSV für Machine Learning oder weitere Analysen.
 
 
