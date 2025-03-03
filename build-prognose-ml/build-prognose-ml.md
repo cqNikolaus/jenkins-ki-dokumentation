@@ -45,10 +45,11 @@ Innerhalb dieses Repos gibt es für jeden der drei Jobs – Datenextraktion, Mod
 
 # Jobs
 ## Job 1: Datenextraktion
-Der komplette Job wird [hier](https://github.com/cqNikolaus/jenkins-ki-dokumentation/blob/main/build-prognose-ml/extract-data.md) ausführlich beschrieben.
+Der erste Job sammelt historische Build-Daten (z. B. Dauer, Erfolg etc.) eines Jobs und speichert sie in einer CSV-Datei.
+➡️ **Ausführlicher Ablauf und Funktionsweise:** [extract-data.md](https://github.com/cqNikolaus/jenkins-ki-dokumentation/blob/main/build-prognose-ml/extract-data.md)
 ## Job 2: Modelltraining
-Der komplette Job wird [hier](https://github.com/cqNikolaus/jenkins-ki-dokumentation/blob/main/build-prognose-ml/train-model.md) ausführlich beschrieben.
+➡️ **Ausführlicher Ablauf und Funktionsweise:** [train-model.md](https://github.com/cqNikolaus/jenkins-ki-dokumentation/blob/main/build-prognose-ml/train-model.md)
 ## Job 3: Build-Prognose
-Der komplette Job wird [hier](https://github.com/cqNikolaus/jenkins-ki-dokumentation/blob/main/build-prognose-ml/predict-build.md) ausführlich beschrieben.
+➡️ **Ausführlicher Ablauf und Funktionsweise:** [predict-build.md](https://github.com/cqNikolaus/jenkins-ki-dokumentation/blob/main/build-prognose-ml/predict-build.md)
 
 
