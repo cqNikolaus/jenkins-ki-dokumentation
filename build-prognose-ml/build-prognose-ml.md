@@ -9,7 +9,6 @@ Dieses Projekt nutzt drei separate Jenkins-Jobs, um Daten aus Builds zu extrahie
   - [Job 1: Datenextraktion](#job-1-datenextraktion)
   - [Job 2: Modelltraining](#job-2-modelltraining)
   - [Job 3: Build-Prognose](#job-3-build-prognose)
-- [Hinweise](#hinweise)
 
 
 # Projektübersicht
@@ -36,7 +35,9 @@ Die Jobs sind unabhängig nutzbar, können aber zusammen einen Ablauf bilden –
 
 ### Code-Repository & Struktur
 
-Der gesamte Code des Projekts ist in einem GitHub-Repository unter github.com/cqnikolaus/jenkinsML organisiert. Innerhalb dieses Repos gibt es für jeden der drei Jobs – Datenextraktion, Modelltraining und Vorhersage – einen eigenen Ordner. Jeder dieser Ordner enthält:
+Der gesamte Code des Projekts ist in einem GitHub-Repository unter https://github.com/cqnikolaus/jenkinsML organisiert. 
+
+Innerhalb dieses Repos gibt es für jeden der drei Jobs – Datenextraktion, Modelltraining und Vorhersage – einen eigenen Ordner. Jeder dieser Ordner enthält:
 
 - Ein Jenkinsfile, das den Ablauf des jeweiligen Jobs beschreibt.
 - Ein Dockerfile, das den Container für den jeweiligen Job definiert.
@@ -44,5 +45,10 @@ Der gesamte Code des Projekts ist in einem GitHub-Repository unter github.com/cq
 
 # Jobs
 ## Job 1: Datenextraktion
+Der komplette Job wird [hier](https://github.com/cqNikolaus/jenkins-ki-dokumentation/blob/main/build-prognose-ml/extract-data.md) ausführlich beschrieben.
 ## Job 2: Modelltraining
+Der komplette Job wird [hier](https://github.com/cqNikolaus/jenkins-ki-dokumentation/blob/main/build-prognose-ml/train-model.md) ausführlich beschrieben.
 ## Job 3: Build-Prognose
+Der komplette Job wird [hier](https://github.com/cqNikolaus/jenkins-ki-dokumentation/blob/main/build-prognose-ml/predict-build.md) ausführlich beschrieben.
+
+
