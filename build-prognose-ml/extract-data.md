@@ -22,7 +22,7 @@ Es wird ein Standard-Python-Image verwendet. Anschließend werden die Python-Abh
 - Das Jenkins-API-Token aus den Credentials der Jenkins Instanz.
 - Die Parameter `TARGET_JOB_NAME` und `FIELDS_TO_INCLUDE`
 
-**4. Das Skript [data_extraction.py](build-prognose-ml/extract-data.md) wird ausgeführt.**
+**4. Das Skript `extract_data.py` wird ausgeführt.**
 
 **5. Die Standardausgabe des Skripts wird in die Datei `{TARGET_JOB_NAME}_build_data.csv` geschrieben und im Jenkins Workspace gespeichert.**
 
