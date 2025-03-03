@@ -51,11 +51,9 @@ Es wird ein Standard-Python-Image verwendet. Anschließend werden die Python-Abh
 6. **Verarbeitung der Daten als DataFrame**  
    - Die Build-Daten werden in eine Tabelle (`pandas.DataFrame`) umgewandelt.  
    - Daten werden bereinigt, builds mit unbekanntem Ergebnis werden herausgefiltert.  
-   - Falls eine Umgebungsvariable definiert, welche Spalten exportiert werden sollen, wird das hier berücksichtigt.  
-   - Eine Binärvariable (`0` oder `1`) für das Build-Ergebnis (`FAILURE` oder nicht) wird hinzugefügt.
+   - Spalten, die im Parameter `FIELDS_TO_INCLUDE` entfernt wurden, werden hier aussortiert.   
+   - Das Label `result_bin` (`0` oder `1`) für das Build-Ergebnis (`FAILURE` oder `SUCCESS`) wird hinzugefügt.
 
 8. **Ausgabe der Daten als CSV**  
-   - Die gefilterten Daten werden als CSV ausgegeben (standardmäßig in die Konsole).  
-   - Falls keine Daten vorhanden sind, wird das Skript mit einer Fehlermeldung beendet.  
+   - Die gefilterten Daten werden als CSV ausgegeben (standardmäßig in die Konsole).    
 
-Am Ende hat man also eine detaillierte Tabelle mit allen relevanten Informationen über die letzten Builds aus Jenkins. 🚀
