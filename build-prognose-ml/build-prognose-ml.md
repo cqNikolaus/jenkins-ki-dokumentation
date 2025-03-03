@@ -45,11 +45,16 @@ Innerhalb dieses Repos gibt es für jeden der drei Jobs – Datenextraktion, Mod
 
 # Jobs
 ## Job 1: Datenextraktion
-Der erste Job sammelt historische Build-Daten (z. B. Dauer, Erfolg etc.) eines Jobs und speichert sie in einer CSV-Datei.
+Der erste Job sammelt historische Build-Daten (z. B. Dauer, Erfolg etc.) eines Jobs und speichert sie in einer CSV-Datei.  
+
 ➡️ **Ausführlicher Ablauf und Funktionsweise:** [extract-data.md](https://github.com/cqNikolaus/jenkins-ki-dokumentation/blob/main/build-prognose-ml/extract-data.md)
 ## Job 2: Modelltraining
+Der zweite Job trainiert ein Machine-Learning-Modell mit den Daten aus einer CSV-Datei und gibt das fertige Modell als .pkl-Datei aus.  
+
 ➡️ **Ausführlicher Ablauf und Funktionsweise:** [train-model.md](https://github.com/cqNikolaus/jenkins-ki-dokumentation/blob/main/build-prognose-ml/train-model.md)
 ## Job 3: Build-Prognose
+Der dritte Job nutzt ein trainiertes Modell und eine passende CSV-Datei, um die Erfolgswahrscheinlichkeit des nächsten Builds eines beliebigen Jobs vorherzusagen.  
+
 ➡️ **Ausführlicher Ablauf und Funktionsweise:** [predict-build.md](https://github.com/cqNikolaus/jenkins-ki-dokumentation/blob/main/build-prognose-ml/predict-build.md)
 
 
