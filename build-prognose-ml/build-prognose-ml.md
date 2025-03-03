@@ -41,3 +41,8 @@ Der gesamte Code des Projekts ist in einem GitHub-Repository unter github.com/cq
 - Ein Jenkinsfile, das den Ablauf des jeweiligen Jobs beschreibt.
 - Ein Dockerfile, das den Container für den jeweiligen Job definiert.
 - Ein Python-Skript, das die eigentliche Logik für den jeweiligen Schritt implementiert.
+
+# Jobs
+## Job 1: Datenextraktion
+## Job 2: Modelltraining
+## Job 3: Build-Prognose
