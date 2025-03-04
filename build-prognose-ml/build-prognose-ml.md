@@ -19,8 +19,7 @@ Das Projekt zeigt, wie Machine Learning in Jenkins eingesetzt werden kann, um di
 - Der zweite Job trainiert ein Machine-Learning-Modell mit den Daten aus einer CSV-Datei und gibt das fertige Modell als .pkl-Datei aus.
 - Der dritte Job nutzt ein trainiertes Modell und eine passende CSV-Datei, um die Erfolgswahrscheinlichkeit des nächsten Builds eines beliebigen Jobs vorherzusagen.
 
-Die Jobs sind unabhängig nutzbar, können aber zusammen einen Ablauf bilden – etwa indem man Daten extrahiert, ein Modell trainiert und dann eine Vorhersage trifft. So wird klar, wie Machine Learning Jenkins smarter machen kann.
-
+Die Jobs sind unabhängig nutzbar, können aber zusammen einen Ablauf bilden – etwa indem man Daten extrahiert, ein Modell trainiert und dann eine Vorhersage trifft.
 
 # Architektur & Komponenten
 
