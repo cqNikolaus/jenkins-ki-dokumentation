@@ -38,32 +38,38 @@ Es wird ein Standard-Python-Image verwendet. Anschließend werden die Python-Abh
 
 ### Ablauf
 
-1. **Konfiguration der Jenkins-Verbindung**  
+#### 1. Konfiguration der Jenkins-Verbindung 
    - Es wird eine Klasse erstellt, die eine Verbindung zu Jenkins herstellt.  
    - Die URL der Jenkins-Instanz, der Benutzername, das API-Token und der Job-Name werden eingelesen bzw. gespeichert.  
    - Optional wird eine maximale Anzahl an Builds definiert, die abgerufen werden sollen.
 
-2. **Generierung von URLs für API-Anfragen**  
+---
+#### 2.Generierung von URLs für API-Anfragen 
    - URLs für Build-Daten und Konsolen-Logs werden basierend auf der Build-Nummer erzeugt.
 
-3. **Abruf von Daten aus Jenkins**  
+---
+#### 3. Abruf von Daten aus Jenkins  
    - Das Skript sendet HTTP-Anfragen an Jenkins und holt die Build-Daten als JSON, sowie den Log des Builds.   
 
-4. **Verarbeitung der Build-Daten**  
+---
+#### 4. Verarbeitung der Build-Daten 
    - Das Skript liest die JSON-Daten eines Builds und extrahiert relevante Informationen.
    - Zusätzliche abgeleitete Features werden hergestellt, z.B. Verhältnis von Commit-Autoren zu Fehler-Verantwortlichen. 
    - Anzahl der Fehler (`ERROR` oder `Exception`) im Log werden gezählt und als `error_count` zur Verfügung gestellt.  
 
-5. **Abruf mehrerer Builds**  
+---
+#### 5. Abruf mehrerer Builds
    - Das Skript ruft nacheinander alle Builds bis zur definierten Maximalanzahl ab.  
    - Die Build-Daten werden in einer Liste gesammelt.
 
-6. **Verarbeitung der Daten als DataFrame**  
+---
+#### 6. Verarbeitung der Daten als DataFrame  
    - Die Build-Daten werden in eine Tabelle (`pandas.DataFrame`) umgewandelt.  
    - Die Daten werden bereinigt: Builds mit unbekanntem Ergebnis werden entfernt.  
    - Spalten, die im Parameter `FIELDS_TO_INCLUDE` entfernt wurden, werden hier aussortiert.   
    - Das Label `result_bin` (`0` oder `1`) für das Build-Ergebnis (`FAILURE` oder `SUCCESS`) wird hinzugefügt.
 
-7. **Ausgabe der Daten als CSV**  
+---
+#### 7. Ausgabe der Daten als CSV  
    - Die gefilterten Daten werden als CSV ausgegeben (standardmäßig in die Konsole).    
 
