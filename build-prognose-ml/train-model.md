@@ -54,7 +54,6 @@ Beinhaltet die zu installierenden Abhängigkeiten:
 
 ### Ablauf
 
-*Skript wird ausgeführt mit Trainingsdaten als Parameter (.csv)*
 #### 1. Pflichtspalten prüfen:  
 Es wird geprüft, ob die vier Pflichtspalten `result_bin`, `duration_sec`, `error_count` und `commits_count` vorhanden sind. Andernfalls bricht das Skript mit einer Fehlermeldung ab.
 
