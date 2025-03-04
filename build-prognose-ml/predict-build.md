@@ -31,50 +31,29 @@ Es wird ein Standard-Python-Image verwendet. Anschließend werden die Python-Abh
 **4. Der Container wird erstellt und die Dateien hineinkopiert. Anschließend wird das Skript mit der CSV-Datei und dem trainierten Modell gestartet. Nach Abschluss wird die prognostizierte Wahrscheinlichkeit des nächsten Builds in der Konsole angezeigt.**
 
 
-## train_model.py
+## predict.py
 ➡ [Link zum Skript](https://github.com/cqNikolaus/JenkinsML/blob/main/prediction/predict.py)
 
 ### Ablauf
 
-#### 1. Pflichtspalten prüfen:  
-Es wird geprüft, ob die vier Pflichtspalten `result_bin`, `duration_sec`, `error_count` und `commits_count` vorhanden sind. Andernfalls bricht das Skript mit einer Fehlermeldung ab.
+#### **1. Modell & Eingabedaten laden:**  
+Das trainierte Machine-Learning-Modell (`model.pkl`) wird mit `joblib.load()` geladen. Anschließend wird die übergebene CSV-Datei mit `pandas.read_csv()` eingelesen. Falls eine der beiden Dateien fehlt oder fehlerhaft ist, bricht das Skript mit einer Fehlermeldung ab.  
 
----
-#### 2.Bekannte Features:  
-Anhand vordefinierter Listen werden numerische, kategoriale und zeitbasierte (Time‑Based) Features erkannt.  
+---  
+#### **2. Erwartete Spalten ermitteln:**  
+Das Skript extrahiert aus der gespeicherten Scikit-Learn-Pipeline die erwarteten numerischen und kategorialen Features. Diese dienen als Basis für die Vorbereitung der Eingabedaten.  
 
-– _Numerisch:_ z. B. `duration_sec`, `commits_count`, `error_count` usw.  
-– _Kategorial:_ z. B. `built_on`, `change_set_kind`, `executor_name`, …  
-– _Zeitbasiert:_ z. B. `build_date`, `build_time`, `build_hour`  
+---  
+#### **3. Fehlende Spalten ergänzen:**  
+Falls die Eingabe-CSV nicht alle erwarteten Features enthält, werden diese Spalten mit `NaN` gefüllt, damit das Modell die Daten trotzdem verarbeiten kann.  
 
-Zusätzlich werden unwichtige Spalten (wie `build_number`, `build_url`, `parameters`) entfernt.
+---  
+#### **4. Erfolgswahrscheinlichkeit berechnen:**  
+Das Modell führt eine **Wahrscheinlichkeitsvorhersage (`predict_proba`)** durch. Der Mittelwert der Wahrscheinlichkeiten für einen erfolgreichen Build (`SUCCESS`) wird berechnet.  
 
----
-#### 3. Unbekannte Spalten analysieren:  
-Alle übrigen Spalten werden geprüft:
-
-- **Numerische Spalten:** Es wird die Pearson-Korrelation zur Zielvariablen `result_bin` berechnet. Nur wenn der Betrag der Korrelation mindestens 0.1 beträgt, wird die Spalte in die Analyse übernommen.
- - **Kategoriale Spalten:** Enthält die Spalte wenige unterschiedliche Werte (hier ≤ 30), wird mittels Chi‑Quadrat-Test (p‑Wert < 0.05) geprüft, ob ein signifikanter Zusammenhang zur Zielvariablen besteht. Ist dies der Fall, wird die Spalte aufgenommen.  
-
-Spalten, die als Freitext (viele unterschiedliche Werte) erkannt werden oder die den Kriterien nicht genügen, werden ignoriert.
-
----
-#### 4. Feature‑Engineering für Zeitangaben:  
-Ein eigener Transformer (`TimeFeaturesExtractor`) zerlegt:
-
-`build_date`: In Jahr, Monat, Tag und Wochentag
-`build_time` und `build_hour`: Es erfolgt eine zyklische Transformation (sin/cos‑Kodierung, basierend auf 24 Stunden).
-
----
-#### 5. Pipeline-Aufbau:  
-Zunächst wird der Zeit‑Transformer als Vorverarbeitungsschritt angewendet, sodass die neuen (numerischen) Zeitfeatures zur Verfügung stehen. Anschließend kommen ein numerischer Pipeline-Teil (Imputation + Skalierung) und ein kategorialer Pipeline-Teil (Imputation + One-Hot-Encoding) zum Einsatz.  
-
-Das gewünschte Modell (z. B. RandomForest, Gradient Boosting, Logistic Regression oder XGBoost) wird als finaler Klassifikator in die Pipeline eingebunden.
-
----
-#### 6.Training & Speicherung:  
-
-Das Modell wird mit den gefilterten Features trainiert und mittels `joblib.dump` in der angegebenen Zieldatei (z. B. `model.pkl`) gespeichert.
+---  
+#### **5. Ausgabe des Ergebnisses:**  
+Die berechnete Erfolgswahrscheinlichkeit wird als gerundeter Prozentwert in der Konsole ausgegeben.
 
 
 
