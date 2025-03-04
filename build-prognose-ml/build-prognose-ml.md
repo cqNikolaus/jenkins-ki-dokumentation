@@ -21,9 +21,9 @@ Das Projekt zeigt, wie Machine Learning in Jenkins eingesetzt werden kann, um di
 
 Die Jobs sind unabhängig nutzbar, können aber zusammen einen Ablauf bilden – etwa indem man Daten extrahiert, ein Modell trainiert und dann eine Vorhersage trifft.
 
-# Architektur & Komponenten
-
 ![Flowchart](https://github.com/cqNikolaus/jenkins-ki-dokumentation/blob/main/build-prognose-ml/jenkinsml-diagramm.png)
+
+# Architektur & Komponenten
 
 - Die Jenkins-Instanz, wird in einem Docker Container betrieben. Dieser Container wird auf einer virtuellen Maschine (VM) in der Hetzner Cloud gehostet.
 - Die Instanz beinhaltet noch ein paar alte Jobs zum Erstellen von Schulungsinstanzen, sowie die 3 Jobs dieses Projekts.
