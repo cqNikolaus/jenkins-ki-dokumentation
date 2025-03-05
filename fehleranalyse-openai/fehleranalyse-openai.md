@@ -49,7 +49,7 @@ Innerhalb dieses Repos gibt es folgende Dateien:
 
 **Grundfunktion des Jobs:**   
 
-Das Skript verbindet sich mit einer Jenkins-Instanz, ruft die Build-Daten und Konsolen-Logs eines Jobs ab, extrahiert relevante Features (z. B. Dauer, Commits, Fehler), berechnet zusätzliche Metriken und speichert die bereinigten Daten als CSV für Machine Learning oder weitere Analysen.
+Ein beliebiger Job stößt bei Fehlschlag automatisch eine Analyse-Job an. Dieser sendet Fehlerzeilen aus dem Log des fehlgeschlagenen Jobs an die OpenAI-API. Die Zeilen werden analysiert und eine Antwort mit der potenziellen Fehlerursache und dessen Behebung wir zurückgesendet und als TXT-Datei gespeichert.
 
 **Bestandteile:**
 - `Dockerfile`
