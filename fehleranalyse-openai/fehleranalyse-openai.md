@@ -47,10 +47,6 @@ Innerhalb dieses Repos gibt es folgende Dateien:
 
 # Job: Log-Analyse
 
-**Grundfunktion des Jobs:**   
-
-Ein beliebiger Job stößt bei Fehlschlag automatisch eine Analyse-Job an. Dieser sendet Fehlerzeilen aus dem Log des fehlgeschlagenen Jobs an die OpenAI-API. Die Zeilen werden analysiert und eine Antwort mit der potenziellen Fehlerursache und dessen Behebung wir zurückgesendet und als TXT-Datei gespeichert.
-
 **Bestandteile:**
 - `Dockerfile`
 - `Jenkinsfile`
