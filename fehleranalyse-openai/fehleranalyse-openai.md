@@ -17,6 +17,18 @@ Der Ablauf besteht aus zwei Hauptprozessen:
 - Die OpenAI-API verarbeitet die Anfrage und liefert eine Antwort mit möglichen Fehlerursachen und Lösungsvorschlägen zurück.
 - Das Ergebnis wird als TXT-Datei im Analyse-Job ausgegeben. 
 
-Durch diese Automatisierung entfällt die manuelle Fehlersuche, und Probleme lassen sich schneller erkennen und beheben.
+Durch diese Automatisierung entfällt die manuelle Fehlersuche, und Probleme lassen sich schneller erkennen und beheben.  
 
+
+  
 ![Flowchart](https://github.com/cqNikolaus/jenkins-ki-dokumentation/blob/main/fehleranalyse-openai/jenkinsllm-diagramm.png)
+
+
+# Architektur & Komponenten
+
+- Die Jenkins-Instanz, wird in einem Docker Container betrieben. Dieser Container wird auf einer virtuellen Maschine (VM) in der Hetzner Cloud gehostet.
+- Diese Instanz beinhaltet auch die Jobs des Projekts [Build-Prognose in Jenkins mit Machine-Learning-Modellen](https://github.com/cqNikolaus/jenkins-ki-dokumentation/blob/main/build-prognose-ml/build-prognose-ml.md), sowie Jobs zum Erstellen von Schulungsinstanzen.
+  - Das Setup sollte deshalb noch einmal sauber auf einer neuen VM aufgesetzt werden.
+- In der Instanz sind der Analyse Job sowie ein zugehöriger Test-Fehlerjob unter dem View "LLM Jobs" abgebildet.
+- Der Analyse-Job läuft in einem separaten Docker Container auf dem Controller (built-in Node), also innerhalb des Jenkins-Containers.
+- Aktuelle URL der Instanz: https://jenkins-clemens01-0.comquent.academy
