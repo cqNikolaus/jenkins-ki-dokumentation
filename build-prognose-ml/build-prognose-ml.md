@@ -26,8 +26,9 @@ Die Jobs sind unabhängig nutzbar, können aber zusammen einen Ablauf bilden –
 # Architektur & Komponenten
 
 - Die Jenkins-Instanz, wird in einem Docker Container betrieben. Dieser Container wird auf einer virtuellen Maschine (VM) in der Hetzner Cloud gehostet.
-- Die Instanz beinhaltet noch ein paar alte Jobs zum Erstellen von Schulungsinstanzen, sowie die 3 Jobs dieses Projekts.
+- Diese Instanz beinhaltet auch die Jobs des Projekts [Einfache Fehleranalyse mit der OpenAI-API](https://github.com/cqNikolaus/jenkins-ki-dokumentation/blob/main/fehleranalyse-openai/fehleranalyse-openai.md). Außerdem Jobs zum Erstellen von Schulungsinstanzen, sowie die 3 Jobs dieses Projekts.
   - Das Setup sollte deshalb noch einmal sauber auf einer neuen VM aufgesetzt werden.
+- In der Instanz sind die drei relevanten Jobs unter dem View "Machine Learning Jobs" abgebildet.
 - Alle Jobs laufen jeweils in einem separaten Docker Container auf dem Controller (built-in Node), also innerhalb des Jenkins-Containers.
 - Aktuelle URL der Instanz: https://jenkins-clemens01-0.comquent.academy
 
