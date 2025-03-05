@@ -31,6 +31,7 @@ Die Jobs sind unabhängig nutzbar, können aber zusammen einen Ablauf bilden –
 - In der Instanz sind die drei relevanten Jobs unter dem View "Machine Learning Jobs" abgebildet.
 - Alle Jobs laufen jeweils in einem separaten Docker Container auf dem Controller (built-in Node), also innerhalb des Jenkins-Containers.
 - Aktuelle URL der Instanz: https://jenkins-clemens01-0.comquent.academy
+- Zum Ausführen des Skripts wird ein **Jenkins-API-Token** benötigt. Das Token ist in den Credentials der aktuellen Jenkins Instanz bereits hinterlegt und wird automatisch genutzt.
 
 
 ### Code-Repository & Struktur
