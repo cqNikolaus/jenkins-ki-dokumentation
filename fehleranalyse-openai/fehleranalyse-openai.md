@@ -32,3 +32,4 @@ Durch diese Automatisierung entfällt die manuelle Fehlersuche, und Probleme las
 - In der Instanz sind der Analyse Job sowie ein zugehöriger Test-Fehlerjob unter dem View "LLM Jobs" abgebildet.
 - Der Analyse-Job läuft in einem separaten Docker Container auf dem Controller (built-in Node), also innerhalb des Jenkins-Containers.
 - Aktuelle URL der Instanz: https://jenkins-clemens01-0.comquent.academy
+- Zum Ausführen des Skripts werden ein **Jenkins-API-Token** und ein **OpenAI-API-Key** benötigt. Beide sind in den Credentials der aktuellen Jenkins Instanz hinterlegt und werden automatisch genutzt.
