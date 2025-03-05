@@ -19,4 +19,4 @@ Der Ablauf besteht aus zwei Hauptprozessen:
 
 Durch diese Automatisierung entfällt die manuelle Fehlersuche, und Probleme lassen sich schneller erkennen und beheben.
 
-![Flowchart](https://github.com/cqNikolaus/jenkins-ki-dokumentation/blob/main/build-prognose-ml/jenkinsllm-diagramm.png)
+![Flowchart](https://github.com/cqNikolaus/jenkins-ki-dokumentation/blob/main/fehleranalyse-openai/jenkinsllm-diagramm.png)
