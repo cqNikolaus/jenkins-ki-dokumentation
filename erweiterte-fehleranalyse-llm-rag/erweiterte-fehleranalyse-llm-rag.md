@@ -1,6 +1,6 @@
 # Erweiterte, isolierte Fehleranalyse mit lokalem LLM & RAG
 
-Dieses Projekt demonstriert, wie Jenkins-basierte DevOps-Workflows mit Hilfe eines lokalen Large Language Models (LLama-2) und einer Wissensdatenbank (RAG – ChromaDB) vollständig isoliert von der Außenwelt optimiert werden können.
+Dieses Projekt zeigt eine praktische Umsetzung, wie Jenkins-Workflows mithilfe eines **lokalen Large Language Models (Llama-2)** und einer internen Wissensdatenbank (**ChromaDB – Retrieval-Augmented Generation, RAG**) automatisiert analysiert und optimiert werden können – und zwar vollständig ohne Internetzugriff in einer isolierten Umgebung.
 
 ---
 
@@ -66,7 +66,7 @@ Der demonstrierte Fehlerfall (`cp target/app.jar /opt/myapp/`) ist exakt auf den
 
 ---
 
-## 📄 [Skripte & Dateien](scripts-und-dateien.md)
+## 📄 [Skripte & Dateien](skripte-und-dateien.md)
 
 Alle verwendeten Skripte und Dateien inkl. kurzer Beschreibung sind hier dokumentiert.
 
