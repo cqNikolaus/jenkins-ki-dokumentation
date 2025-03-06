@@ -27,11 +27,7 @@ Ziel des Projekts ist es, die Vorteile einer KI-gestützten Fehleranalyse in Jen
 
 ## 📌 Architektur & Workflow
 
-Hier siehst du den grundlegenden Workflow im Überblick:
-
-![Architektur-Diagramm](assets/fehleranalyse-rag-architektur-diagramm.png)
-
-**Schritt-für-Schritt:**  
+![Architektur-Diagramm](fehleranalyse-rag-architektur-diagramm.png)
 
 1. Jenkins-Build schlägt fehl.
 2. Analyse-Job wird automatisch gestartet.
