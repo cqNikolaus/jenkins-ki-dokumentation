@@ -8,14 +8,14 @@ Dieses Projekt zeigt eine praktische Umsetzung, wie Jenkins-Workflows mithilfe e
 
 - [🔥 Projektziel](#-projektziel)
 - [📌 Architektur & Workflow](#-architektur--workflow)
-- [📜 Skripte & Dateien](#-skripte-und-dateien)
+- [📜 Skripte & Dateien](#-skripte--dateien)
 - [⚙️ Demonstrierter Fehlerfall](#️-demonstrierter-fehlerfall)
 - [🛠️ Nutzung & Einrichtung](#️-nutzung--einrichtung)
 - [🔗 Projektkomponenten im Detail](#-projektkomponenten-im-detail)
   - [Jenkins-Container](jenkins-container.md)
   - [LLM-API-Container](llm-api-container.md)
   - [ChromaDB-Container](chromadb-container.md)
-- [📄 Übersicht der Skripte & Dateien](./skripte-und-dateien.md)
+- [📄 Übersicht der Skripte & Dateien](skripte-und-dateien.md)
 
 ---
 
