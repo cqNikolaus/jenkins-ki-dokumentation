@@ -67,5 +67,5 @@ Der demonstrierte Fehlerfall (`cp target/app.jar /opt/myapp/`) ist exakt auf den
 
 ## 📄 [Skripte & Dateien](skripte-und-dateien.md)
 
-Alle verwendeten Skripte und Dateien inkl. kurzer Beschreibung sind hier dokumentiert.
+Alle verwendeten Skripte und Dateien inkl. kurzer Beschreibung sind [hier](skripte-und-dateien.md) dokumentiert.
 
