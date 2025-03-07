@@ -34,7 +34,7 @@ Diese Seite beschreibt alle Skripte und relevanten Dateien, die im Projekt verwe
 
 - **Output:** `embeddings.json` (Embeddings-Daten zur späteren Ingestion in ChromaDB)
 
-- [🔗 Zum Skript auf GitHub](https://github.com/cqNikolaus/jenkins-llama2-rag-log-analyzer/blob/main/chromadb-container/text_to_embeddings.py)
+- [🔗 text_to_embeddings.py auf GitHub](https://github.com/cqNikolaus/jenkins-llama2-rag-log-analyzer/blob/main/chromadb-container/text_to_embeddings.py)
 
 ---
 
@@ -87,7 +87,7 @@ Diese Seite beschreibt alle Skripte und relevanten Dateien, die im Projekt verwe
 - Empfängt die KI-Analyse als JSON-Antwort.
 - Schreibt die Analyse in eine Datei (`analysis_report.txt`), welche im Jenkins Workspace gespeichert wird.
 
-- [→ analyze_log.py auf GitHub](https://github.com/cqNikolaus/jenkins-llama2-rag-log-analyzer/blob/main/jenkins-container/analyze_log.py)
+- [→ analyze_log.py auf GitHub](https://github.com/cqNikolaus/jenkins-llama2-rag-log-analyzer/blob/main/jenkins/analyze_log.py)
 
 ---
 
