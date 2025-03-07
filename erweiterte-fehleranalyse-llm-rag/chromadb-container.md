@@ -33,9 +33,9 @@ Der Container enthält eine **einzelne Collection**, die Embeddings aus einem vo
 Die Embeddings wurden lokal generiert und dann mittels eines Skripts (`ingestion.py`) innerhalb des Containers direkt in die Datenbank geladen.
 
 - Skript zur Erstellung von Embeddings:  
-  [`text_to_embeddings.py`](scripts-und-dateien.md#text_to_embeddingspy) (lokale Ausführung)
+  [`text_to_embeddings.py`](skripte-und-dateien.md#text_to_embeddingspy) (lokale Ausführung)
 - Ingestion-Skript zum Befüllen der Datenbank:  
-  [`ingestion.py`](scripts-und-dateien.md#ingestionpy)
+  [`ingestion.py`](skripte-und-dateien.md#ingestionpy)
 
 ### Ablauf der Befüllung (kurz):
 
@@ -59,10 +59,10 @@ Wenn der API-Endpunkt im LLM-API-Container Logs von Jenkins empfängt, sucht er 
 
 ## Skripte & Dateien (zur Erzeugung der Embeddings & Befüllung)
 
-- [`text_to_embeddings.py`](scripts-und-dateien.md#text_to_embeddingspy):  
+- [`text_to_embeddings.py`](skripte-und-dateien.md#text_to_embeddingspy):  
   Erzeugt lokal aus Rohtexten Embeddings.
   
-- [`ingestion.py`](scripts-und-dateien.md#ingestionpy):  
+- [`ingestion.py`](skripte-und-dateien.md#ingestionpy):  
   Lädt Embeddings in die ChromaDB-Collection.
 
 ---
