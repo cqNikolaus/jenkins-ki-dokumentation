@@ -54,7 +54,7 @@ Der API-Endpunkt wird durch das Python-Webframework **FastAPI** bereitgestellt. 
    - Die erstellte Analyse wird als HTTP-Response an den aufrufenden Jenkins-Analyzer-Job zurückgegeben.
 
 Die genaue Beschreibung des Skripts findest du hier:  
-→ [app.py (detaillierte Erklärung)](scripts-und-dateien.md#apppy)
+→ [app.py (detaillierte Erklärung)](skripte-und-dateien.md#apppy)
 
 
 
