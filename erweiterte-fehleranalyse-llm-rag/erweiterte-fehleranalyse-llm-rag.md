@@ -27,14 +27,17 @@ Ziel des Projekts ist es, die Vorteile einer KI-gestützten Fehleranalyse in Jen
 
 ## 📌 Architektur & Workflow
 
-![Architektur-Diagramm](fehleranalyse-rag-architektur-diagramm.png)
-
+**Ablauf:**
 1. Jenkins-Build schlägt fehl.
 2. Analyse-Job wird automatisch gestartet.
-3. Jenkins ruft über HTTP die lokale LLM-API an.
+3. Jenkins sendet über HTTP Build-Daten an die lokale LLM-API.
 4. API liest Jenkins-Logs, sucht in der ChromaDB nach Kontext.
-5. LLM erstellt eine Analyse samt Lösungsvorschlägen.
-6. Ergebnis landet als `analysis_report.txt` im Jenkins-Workspace.
+5. Prompt mit Jenkins-Logs und Kontext aus der ChromaDB werden an das LLM gesendet.
+6. LLM erstellt eine Analyse samt Lösungsvorschlägen.
+7. Ergebnis landet als `analysis_report.txt` im Jenkins-Workspace.
+
+![Architektur-Diagramm](fehleranalyse-rag-architektur-diagramm.png)
+
 
 ---
 
