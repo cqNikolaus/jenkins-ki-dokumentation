@@ -51,7 +51,7 @@ Der demonstrierte Fehlerfall (`cp target/app.jar /opt/myapp/`) ist exakt auf den
 
 - Alle Container laufen in einem isolierten Docker-Netzwerk (`llm-net`).
 - Kein externer Traffic erlaubt (vollständig isoliert).
-- Einrichtung siehe [Scripts & Dateien](scripts-und-dateien.md).
+- Einrichtung siehe [Skripte & Dateien](skripte-und-dateien.md).
 
 ---
 
