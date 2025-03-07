@@ -74,7 +74,7 @@ Gründe für die Nutzung von Llama-2:
 
 ## Zugehörige Dateien & Skripte (Verweise)
 
-- [`app.py`](scripts-und-dateien.md#apppy)
+- [`app.py`](skripte-und-dateien.md#apppy)
 - Dockerfile zur Erstellung des Containers  
 
 [→ Übersicht aller Skripte und Dateien](skripte-und-dateien.md)
