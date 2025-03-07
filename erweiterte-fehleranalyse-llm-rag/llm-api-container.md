@@ -33,10 +33,15 @@ Der API-Endpunkt wird durch das Python-Webframework **FastAPI** bereitgestellt. 
 
 2. **Abrufen der Jenkins-Logs**
    - Das Skript ruft über HTTP GET (Jenkins API) die Logs des fehlgeschlagenen Builds direkt von Jenkins ab.
+  
+3. **Fehler extrahieren**
+   - Filtert relevante Fehlerzeilen aus den Logs
+   
+4.  **Chunks bilden**  
+      - Um den Kontext optimal aus der ChromaDB abrufen zu können, wird der extrahierte Log-Text in kleinere, semantisch sinnvolle Einheiten („Chunks“) aufgeteilt. 
 
 3. **Semantische Kontextsuche via ChromaDB**
-   - Extrahiert relevante Fehlerzeilen aus den Logs.
-   - Führt eine semantische Suche auf der ChromaDB aus, um passende historische Kontexte zu ermitteln.
+   - Für jeden Chunk wird eine semantische Suche ausgeführt, wodurch sichergestellt wird, dass relevante historische Kontexte gezielt und treffsicher ermittelt werden.
 
 3. **Prompt-Erstellung**
    - Nutzt die Logs und die ChromaDB-Treffer, um einen verständlichen Prompt zu generieren.
@@ -48,30 +53,10 @@ Der API-Endpunkt wird durch das Python-Webframework **FastAPI** bereitgestellt. 
 5. **Zurücksenden der Analyse**
    - Die erstellte Analyse wird als HTTP-Response an den aufrufenden Jenkins-Analyzer-Job zurückgegeben.
 
----
-
-## Technische Umsetzung
-
-Die komplette Logik (API & LLM-Nutzung) wird durch ein einzelnes Python-Skript (`app.py`) bereitgestellt:
-
-- Das Python-Skript startet eine REST-API mittels `FastAPI` und stellt den Endpunkt `/analyze_log` bereit.
-- Das Llama-2-Modell wird durch das Python-Modul `llama_cpp` geladen und innerhalb dieses Skriptes verwendet.
-- Für die semantische Suche nach Embeddings greift das Skript via `chromadb` auf den ChromaDB-Container zu.
-- Die gesamte Logik (Log-Abruf, Prompt-Erstellung, LLM-Analyse, Kontextabruf) erfolgt ausschließlich in diesem Skript.
-
 Die genaue Beschreibung des Skripts findest du hier:  
 → [app.py (detaillierte Erklärung)](scripts-und-dateien.md#apppy)
 
----
 
-## Semantische Suche mit ChromaDB
-
-Das API-Skript nutzt intern eine Verbindung zur ChromaDB, um mithilfe einer embeddingsbasierten semantischen Suche relevante historische Daten abzurufen. Diese Daten werden dem Prompt hinzugefügt, um eine präzise Fehleranalyse mit Kontextbezug zu ermöglichen.
-
-Mehr zu ChromaDB und deren Einrichtung findest du hier:  
-→ [ChromaDB-Container](chromadb-container.md)
-
----
 
 ## Verwendung des Llama-2-Modells
 
@@ -86,30 +71,6 @@ Gründe für die Nutzung von Llama-2:
 
 ---
 
-## Zusammenfassung des Workflows im LLM-API-Container
-
-Der Ablauf im Container zusammengefasst:
-
-1. API-Endpunkt erhält Anfrage vom Analyzer-Job (Jenkins)
-2. API ruft Logs aus Jenkins ab (intern über HTTP)
-3. API führt semantische Suche in der ChromaDB durch
-4. API generiert Prompt (Logs + ChromaDB-Kontext)
-5. API übergibt Prompt an Llama-2-Modell
-6. LLM erstellt Fehleranalyse & Lösungsvorschläge
-5. API sendet Analyseergebnis an Analyzer-Job zurück
-
----
-
-## Besonderheiten und Designentscheidungen
-
-- **Vollständig offline**
-  - Container hat keinen Zugriff auf das Internet
-  - Modell und alle benötigten Ressourcen sind lokal verfügbar
-  
-- **Effiziente Nutzung der Ressourcen**
-  - Llama-2 wurde gewählt, weil es effizient auf einer 16GB-RAM VM betrieben werden kann, weit verbreitet ist und zuverlässig bei technischer Log-Analyse arbeitet.
-
----
 
 ## Zugehörige Dateien & Skripte (Verweise)
 
@@ -125,8 +86,3 @@ Der Ablauf im Container zusammengefasst:
 - [Zurück zur Projektübersicht](erweiterte-fehleranalyse-llm-rag.md)
 - [Jenkins-Container](jenkins-container.md)
 - [ChromaDB-Container](chromadb-container.md)  
-
----
-
-Mit dieser Struktur sind die Abläufe eindeutig und verständlich geordnet, und dein Leser weiß genau, was in welchem Schritt passiert.  
-Soll ich noch etwas weiter anpassen, oder passt dir diese Version jetzt so?
